@@ -6,7 +6,7 @@
 
 <br>
 
-> Testar o ToDo: <a href="https://clone-player-spotify.vercel.app/" target="_blank" >Link</a>
+> Testar o ToDo: <a href="https://to-do-react-js-sooty.vercel.app/" target="_blank" >Link</a>
 
 ## Objetivo
 
