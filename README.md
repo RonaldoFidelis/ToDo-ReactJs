@@ -14,7 +14,7 @@
 
 ## Futuro
 
-- Adiciona as tarefas ao localstorage
+- Utilizar o localstorage como "back-end" para salvar as tasks. => CONCLUIDO!
 
 ## 🚀 Tecnologias usadas:
 
