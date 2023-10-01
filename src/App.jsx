@@ -80,8 +80,8 @@ function App() {
     const tasks = getStorage();
     const updateTask = tasks.map((item) => {
       if (item.id === id) {
-          console.log(item);
-          item.text = newTask,
+        console.log(item);
+        item.text = newTask,
           item.status = false,
           item.edit = false
       }
@@ -93,7 +93,7 @@ function App() {
   }
 
   return (
-    <div className='container flex items-center justify-center mx-auto mt-10'>
+    <div className='container flex flex-col items-center justify-center mx-auto mt-10'>
       <div className='flex flex-col w-80 p-2 max-h-96 bg-bg rounded-md shadow-2xl text-white'>
         <AddTask
           addTask={addTask} />
@@ -113,6 +113,11 @@ function App() {
                 deleteTask={deleteTask} />)
           ))}
         </div>
+      </div>
+      <div className='mt-10 text-base font-bold'>
+        <p className="flex justify-center gap-1 text-gray-500 text-xs">&copy; Criado e desenvolvido por<a
+          className="hover:text-white cursor-pointer" href="https://github.com/RonaldoFidelis"
+          target="_blank">Ronaldo Fidelis</a></p>
       </div>
     </div>
   )
