@@ -20,7 +20,7 @@ export const CardTask = ({ task, editTask, check, deleteTask }) => {
         <button
           onClick={() => deleteTask(task.id)}
           className="flex items-center justify-center">
-          <i class="fa-regular fa-trash-can"></i>
+          <i className="fa-regular fa-trash-can"></i>
         </button>
       </div>
     </div>

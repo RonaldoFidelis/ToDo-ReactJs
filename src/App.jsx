@@ -1,18 +1,33 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import AddTask from './components/AddTask'
 import { CardTask } from './components/CardTask'
 import EditTask from './components/EditTask'
 
 function App() {
-  const [task, setTask] = useState([
-    {
-      id: 1,
-      text: 'Adicione uma nova tarefa!',
-      status: false,
-      edit: false
-    },
-  ])
+  const [task, setTask] = useState([])
+
+  const setStorage = (task) => {
+    let setTask = JSON.stringify(task)
+    localStorage.setItem('tasks', setTask)
+  }
+
+  const getStorage = () => {
+    let items = localStorage.getItem('tasks');
+    let tasks = JSON.parse(items);
+    return tasks;
+  }
+
+  const removeStorage = () => {
+
+  }
+
+  useEffect(() => {
+    const tasks = getStorage();
+    if (tasks && tasks.length > 0) {
+      setTask(tasks);
+    }
+  }, []);
 
   const addTask = (text) => {
     const newTask = [...task, {
@@ -21,12 +36,14 @@ function App() {
       status: false,
       edit: false
     }];
-    setTask(newTask);
+
+    setStorage(newTask);
+    setTask(getStorage())
   }
 
   const check = (id) => {
-    const newTask = [...task]
-    newTask.map((task) => {
+    const tasks = getStorage();
+    tasks.map((task) => {
       if (task.id == id) {
         if (task.status == true) {
           task.status = false
@@ -35,43 +52,43 @@ function App() {
         }
       }
     })
-    setTask(newTask)
+    setStorage(tasks)
+    setTask(getStorage())
   }
 
   const deleteTask = (id) => {
-    const newTask = [...task]
-    const filter = newTask.filter((task) => {
-      if (task.id == id) {
-        return null
-      }
-      return task;
-    })
-    setTask(filter)
+    const tasks = getStorage();
+    const updatedTasks = tasks.filter(item => item.id !== id);
+    setStorage(updatedTasks);
+    setTask(getStorage())
   }
 
   const editTask = (id) => {
-    const newTasks = [...task]
-    newTasks.map((item) => {
+    const tasks = getStorage();
+    tasks.map((item) => {
       if (item.id === id) {
         item.edit = true
       }
+
     })
 
-    setTask(newTasks)
+    setStorage(tasks);
+    setTask(getStorage())
   }
 
   const renderEditTask = (newTask, id) => {
-    const tasks = [...task];
+    const tasks = getStorage();
     const updateTask = tasks.map((item) => {
-      if(item.id === id){
-        item.text = newTask,
-        item.status = false,
-        item.edit = false
+      if (item.id === id) {
+          console.log(item);
+          item.text = newTask,
+          item.status = false,
+          item.edit = false
       }
       return item;
     })
-
-    setTask(updateTask)
+    setStorage(updateTask)
+    setTask(getStorage())
 
   }
 
@@ -86,7 +103,7 @@ function App() {
               <EditTask
                 key={index}
                 renderEditTask={renderEditTask}
-                task={item}/>
+                task={item} />
             ) : (
               <CardTask
                 key={index}
