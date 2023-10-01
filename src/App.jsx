@@ -115,7 +115,7 @@ function App() {
         </div>
       </div>
       <div className='mt-10 text-base font-bold'>
-        <p className="flex justify-center gap-1 text-gray-500 text-xs">&copy; Criado e desenvolvido por<a
+        <p className="flex justify-center gap-1 text-gray-500 text-xs">&copy; Desenvolvido por<a
           className="hover:text-white cursor-pointer" href="https://github.com/RonaldoFidelis"
           target="_blank">Ronaldo Fidelis</a></p>
       </div>
