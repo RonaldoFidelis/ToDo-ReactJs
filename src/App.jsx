@@ -18,10 +18,6 @@ function App() {
     return tasks;
   }
 
-  const removeStorage = () => {
-
-  }
-
   useEffect(() => {
     const tasks = getStorage();
     if (tasks && tasks.length > 0) {
@@ -97,7 +93,7 @@ function App() {
       <div className='flex flex-col w-80 p-2 max-h-96 bg-bg rounded-md shadow-2xl text-white'>
         <AddTask
           addTask={addTask} />
-        <div className='grid items-center justify-center gap-2 overflow-y-scroll'>
+        <div className='grid items-center justify-center gap-2 overflow-y-scroll mb-4'>
           {task.map((item, index) => (
             item.edit ? (
               <EditTask

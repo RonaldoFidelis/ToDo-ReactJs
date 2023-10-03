@@ -22,7 +22,7 @@ const AddTask = ({ addTask }) => {
       <form
         className="flex fle-row text-sm items-center justify-center" onSubmit={handleSubmit}>
         <input
-          className="w-52 px-2 py-3 outline-none h-7 bg-transparent border-2 border-body"
+          className="w-60 px-2 py-3 outline-none h-7 bg-transparent border-2 border-body"
           type="text"
           placeholder="Tarefa..."
           value={task}
