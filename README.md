@@ -14,7 +14,7 @@
 
 ## Futuro
 
-- Utilizar o localstorage como "back-end" para salvar as tasks. => CONCLUIDO!
+- Utilizar o localstorage para armazena e carrega as tasks(tarefas). - CONCLUIDO!
 
 ## 🚀 Tecnologias usadas:
 
