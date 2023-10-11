@@ -112,7 +112,7 @@ function App() {
       </div>
       <div className='mt-10 text-base font-bold'>
         <p className="flex justify-center gap-1 text-gray-500 text-xs">&copy; Desenvolvido por<a
-          className="hover:text-white cursor-pointer" href="https://github.com/RonaldoFidelis"
+          className="hover:text-white cursor-pointer" href="https://portfolio-ronaldo-fidelis.netlify.app/"
           target="_blank">Ronaldo Fidelis</a></p>
       </div>
     </div>
